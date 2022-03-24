@@ -1,4 +1,5 @@
-/*Especificidad CSS
+/*
+Especificidad CSS
 1. !important
 2. Atributo Style
 3. Selectores
@@ -6,6 +7,20 @@
 3.2 Selectores de clase, atributos y pseudo clases
 3.3 Selector de tipo y pseudo elementos
 
+Unidades de Medidas
+
+1.Absolutas: tienen el mismo valor sin importar donde se defina, la resolucion de la pantalla , ni ningun otro valor externo. Ej: px , cm, mm, pc , pt
+
+2.Relativas: su valor final asignado es relativo a diferentes factores, resolucion,contenedores, etc. Ej: 
+2.1.Porcentaje: relativo al tamano del contenedor,
+2.2.ems: relativos al tamano de la fuente del contenedor x2  
+2.3.exs: relativos al tamano del alto de la letra x en minuscula de la fuente que tengamos en el momento 
+2.4.rems: utilizan la fuente de la raiz del documento(HTML)
+
+3. Relativas al Viewport: 
+3.1 VW: cada unidad es 1% del ancho del viewport
+3.2 VH: cada unidad es 1% del alto del viewport
+3.3.Vmin: 1% del ancho o del alto , dependiendo de cual sea mas pequena
 */
 
 
@@ -31,14 +46,35 @@ body
   max-width: 960px;
   max-height: 500px;
   width: 100%;
-  height: 100%;
+  height: 80%;
   background-color: white;
   /*box-shadow:Horizontal,vertical,desenfoque y amplitud*/
   box-shadow: 5px 5px 6px 1px black;
   border-radius: 5px;
   position: relative;
   padding: 1.8em;
+  overflow: scroll;
 
+}
+
+.content
+{
+  padding:1em;
+}
+td
+{
+  display: block;
+  width: 100%;
+}
+td:nth-of-type(1)
+{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #4A0C68;
+}
+th
+{
+  display: none;
 }
 
 .actions
@@ -70,7 +106,7 @@ body
   border-width: 2px;
   border-color: #c6426e;
   text-align: center;
-  line-height: 1em;
+  line-height: 2em;
 }
 
 header
@@ -79,6 +115,11 @@ header
   border-width: 2px;
   border-color: #c6426e;
   line-height: 1em;
+}
+
+#interlineado
+{
+  line-height: 2em;
 }
 
 td
@@ -99,6 +140,7 @@ a:hover
 .tittle
 {
   text-transform: uppercase;
+  
 }
 
 .text
@@ -132,16 +174,18 @@ a:hover
 .title-item
 {
   padding-bottom: .5em;
+ 
 }
 
 .position
 {
   background-color: #c6426e;
   color: white;
-  padding: 10px;
+  padding: 0.5em;
   border-radius: 4px;
   margin-right: .5em;
   font-size: 2em;
+  line-height: 3em;
 }
 
 h2
@@ -153,4 +197,38 @@ h2
 {
   float: left;
   margin-right: 2em;
+}
+
+img
+{
+  max-width: 100%;
+}
+
+@media(min-width:900px)
+{
+  th
+  {
+    display: table-cell;
+  }
+  td
+  {
+    display: table-cell;
+    width: auto;
+  }
+  td:nth-of-type(1)
+  {
+    font-size: 1em;
+  }
+  .content
+  {
+    padding: 1.8em;
+  }
+}
+
+@media (min-height:550px)
+{
+  .content
+  {
+    height: 500px;
+  }
 }
