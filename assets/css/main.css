@@ -204,6 +204,13 @@ img
   max-width: 100%;
 }
 
+.disabled
+{
+  pointer-events: none; 
+  cursor: default; 
+}
+
+
 @media(min-width:900px)
 {
   th
